@@ -4,6 +4,7 @@ import logging
 import os
 from requests.auth import HTTPBasicAuth
 from bs4 import BeautifulSoup
+import json
 
 app = Flask(__name__)
 sandbox_url = os.environ['SANDBOX_URL']
@@ -94,7 +95,13 @@ def ShowDatasetDesc():
         )
 
         if response is not None:
-            return response.json()
+            data = response.json()
+            # Extract the "properties" dictionary
+            properties = data.get("properties", {})
+
+            # Transform the "properties" dictionary into the desired list of dictionaries
+            result = [{"name": key, "type": value["type"]} for key, value in properties.items()]
+            return result
         else:
             return jsonify({"error": "Failed to retrieve dataset description"}), 500
     else:
