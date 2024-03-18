@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: dataopennesscommunity/demo-golden
+  pullPolicy: Always
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 5005
+  targetPort: 5005
+
+ingress:
+  enabled: true
+  # annotations, hosts, and other configurations go here
+
+sandboxUrl: http://datamgmtdemo01.eastasia.cloudapp.azure.com:30190/denodo-restfulws
+prodUrl: http://datamgmtdemo01.eastasia.cloudapp.azure.com:30190/denodo-restfulws
