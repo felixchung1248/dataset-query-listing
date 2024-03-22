@@ -14,5 +14,5 @@ ingress:
   enabled: true
   # annotations, hosts, and other configurations go here
 
-sandboxUrl: http://datamgmtdemo01.eastasia.cloudapp.azure.com:30190/denodo-restfulws
+sandboxUrl: http://datamgmtdemo01.eastasia.cloudapp.azure.com:30290/denodo-restfulws
 prodUrl: http://datamgmtdemo01.eastasia.cloudapp.azure.com:30190/denodo-restfulws
